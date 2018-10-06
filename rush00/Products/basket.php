@@ -27,3 +27,5 @@
 		$_SESSION['basket_price'] = NULL;
 		$_SESSION['basket_count'] = NULL;
 	}
+
+	?>

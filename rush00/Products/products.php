@@ -10,3 +10,5 @@
 			$request = mysqli_fetch_assoc($request);
 		return $request; 
 	}
+
+?>
