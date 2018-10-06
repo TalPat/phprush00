@@ -1,5 +1,11 @@
 <?php
 
+	$servername = "localhost";
+	$username = "";
+	$password = "sixteen";
+	$dbname = "rush00";
+	$conn;
+
 	function ft_printheader()
 	{
 		if (isset($_SESSION['username']) && !empty($_SESSION['username']))
@@ -51,6 +57,28 @@
 	function ft_printnew()
 	{
 		
+	}
+
+	function ft_connect_database()
+	{
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		if (!$conn)
+			die("Connection failed: " . mysqli_connect_error());
+		echo "Connected successfully";
+		return ($conn);
+	}
+
+	function ft_create_database()
+	{
+		$conn = mysqli_connect($servername, $username, $password);
+		if (!$conn)
+			die("Connection failed: " . mysqli_connect_error());
+		$sql = "CREATE DATABASE ".$dbname;
+		if (mysqli_query($conn, $sql))
+			echo "Database created successfully";
+		else
+			echo "Error creating database: " . mysqli_error($conn);
+		mysqli_close($conn);
 	}
 
 ?>
