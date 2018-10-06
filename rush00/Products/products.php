@@ -1,5 +1,5 @@
 <?PHP
-	require_once('database.php');
+	require_once('../Database/connect.php');
 
 	function product_byid(int $id)
 	{
