@@ -44,6 +44,8 @@
   		`firstname` varchar(45) NOT NULL,
   		`lastname` varchar(45) NOT NULL,
   		`address` varchar(100) NOT NULL,
+  		'gender' tinyint(1) DEFAULT '0',
+  		PRIMARY key ('id')
 	)
 
 	$sql = "CREATE TABLE 'Product'"
@@ -55,7 +57,8 @@
   		`isAdult` tinyint(1) DEFAULT '0',
   		`picture` varchar(50) DEFAULT NULL,
   		`stock` int(10) unsigned DEFAULT 10,
-  		'description' varchar(255) 
+  		'description' varchar(255)
+  		PRIMARY key ('id')
 	)
 
 	$sql = "CREATE TABLE 'Credits'"
@@ -64,6 +67,7 @@
 		'number' int(16) NOT NULL,
 		'expiry' int
 		'CVV' int
+		PRIMARY key ('id')
 	)
 
 	$sql = "CREATE TABLE 'Category'"
@@ -73,3 +77,5 @@
 		PRIMARY KEY ('id'),
 		UNIQUE KEY `id_UNIQUE` (`id`)
 	)
+	$req = mysqli_query($db, $sql);
+	var_dump(mysqli_error($db));
