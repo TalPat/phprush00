@@ -19,10 +19,10 @@
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="text" name="login" placeholder="email" required></td>
+					<td><input type="password" name="login" required></td>
 				</tr>
 				<tr>
-					<td><input type="button" name="OK" value="Login"></td>
+					<td><input type="submit" name="OK" value="Login"></td>
 				</tr>
 			</table>
 		</form>
