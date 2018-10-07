@@ -19,20 +19,13 @@
 		$price = 19;
 		if ($val[22] > 5)
 			$price = 29;
-		$val[3] = trim($val[3], "[]");
+		$val[3] = preg_replace('/"/', '\'', $val[3]);
 		preg_match_all("/(?<='name': ')(.*?)(?='})/", $val[3], $genarr);
-		$genser = serialize($genarr[0]);
+		$genser = serialize($genarr);
+		$val[9] = preg_replace('/[^A-Za-z0-9\-]/', '', $val[9]);
 		$sql = 
 			"INSERT INTO Product (title, price, rating, actors, director, genres, image, description, access_key)
 			VALUES ('".$val[20]."', '".$price."', '".$val[22]."', '', '', '".$genser."', 'https://image.tmdb.org/t/p/original".$val[11]."', '".$val[9]."', '".rand(0,999999999)."');";
-		if (mysqli_query($conn, $sql))
-		{
-			echo"Records created successfully\n";
-		}
-		else
-		{
-			echo"Unable to add to table".mysqli_error($conn)."\n";
-		}
 	}
 
 ?>
@@ -42,7 +35,7 @@
 <body>
 	<?php ft_printheader(); ?>
 	<div class="maincontent">
-		<p><?php echo "$output"; ?></p>
+		<p>CSV integrated into database.</p>
 	</div>
 	<?php ft_printfooter(); ?>
 </body>
