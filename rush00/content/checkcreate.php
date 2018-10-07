@@ -1,6 +1,8 @@
 <?php
 
 	session_start();
+	if (!$_POST[OK])
+		header("location: createaccount.php");
 	include_once '../Extra/functions.php';
 	$exists = 0;
 	$conn = ft_connect_database();
@@ -31,10 +33,12 @@
 		{
 			$output = "Unable to add to table ".mysqli_error($conn)."\n";
 		}
-		$sql = "SELECT userid, username FROM Users WHERE email = '".$_POST[login]."'";
+		$sql = "SELECT id, username FROM Users WHERE email = '".$_POST[login]."'";
 		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
 		$_SESSION[username] = $row[username];
-		$_SESSION[userid] = $row[userid];
+		$_SESSION[userid] = $row[id];
+		print_r($_SESSION);
 	}
 	
 ?>
