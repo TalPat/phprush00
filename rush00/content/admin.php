@@ -17,6 +17,7 @@
 		<a href="../Database/install.php">Initialize database</a><br>
 		<a href="add.php">Add product</a><br>
 		<a href="remove.php">Remove product</a><br>
+		<a href="modify.php">Modify product</a><br>
 		<a href="csvgen.php">Generate from CSV</a><br>
 		<a href="addadmin.php">Change admin user</a><br>
 	</div>
