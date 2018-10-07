@@ -7,4 +7,5 @@
 	$arr = unserialize($arr);
 	array_push($arr, $_POST[id]);
 	$_SESSION[basket] = serialize($arr);
+	header("location: $_POST[url]");
 ?>
