@@ -1,26 +1,23 @@
 <?php
 
-	function ft_printheader()
+function ft_printheader()
 	{
 		if (isset($_SESSION['username']) && !empty($_SESSION['username']))
-			$logstat =
-				'<p>Logged in as '.$_SESSION[username].'</p>
-				<a href="logout.php">Logout</a>';
+			$logstat = '<p>Logged in as '.$_SESSION[username].'</p>';
 		else
-			$logstat = '<a href="login.php">Login</a>';
+			$logstat = '<a href="login.php" style="color:#b30000;">Login</a>';
 		print(
 			'<div class="header">
-				<div class="logo">
-					<a href="home.php"><img src="Img/logo.png" alt=""></a>
+				<div>
+					<a href="index.php"><img src="../Img/logo.png" alt=""></a>
 				</div>
 				<div class="menu">
-					<a href="home.php">HOME</a>
-					<a href="browse.php">BROWSE MOVIES</a>
-					<a href="Categories.php">CATEGORIES</a>
-					<a href="basket.php"><img src="Img/basket.png" alt=""></a>
-					<input type="text" placeholder="Search...">
+					<a href="index.php" style="color:#b30000;">HOME</a>
+					<a href="browse.php" style="color:#b30000;">BROWSE MOVIES</a>
+					<a href="Categories.php" style="color:#b30000;">CATEGORIES</a>
 				</div>
 				<div class="login">
+					<a href="basket.php" ><img src="../Img/basket.png" alt=""></a>
 					'.$logstat.'
 				</div>
 			</div>'

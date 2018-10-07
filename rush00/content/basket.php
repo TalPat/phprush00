@@ -1,7 +1,7 @@
 <?PHP
 	session_start();
-
 	require_once('products.php');
+
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['id'])
 	{
 		$movies = product_byid($_POST('id'));
@@ -16,8 +16,11 @@
 			}
 			else
 			{
-				
+				$basket[$_POST['id'] = serialize($basket);
+				$_SESSION['basket_count'] += $_POST['quantity'];
+				$_SESSION['basket_price'] += $movies['price'] * $_POST['quantity'];
 			}
+			$_SESSION['basketMovie'] = serialize($basket);
 		}
 	}
 
@@ -27,5 +30,3 @@
 		$_SESSION['basket_price'] = NULL;
 		$_SESSION['basket_count'] = NULL;
 	}
-
-	?>
