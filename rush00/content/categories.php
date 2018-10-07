@@ -19,10 +19,7 @@
 		<h2>Categories</h2>
 		<table>
 	    	<tr>
-                <td><a href="list.php" style="color:#b30000;">Adventure</a></td>
-                <td><a href="list.php" style="color:#b30000;">Comedy</a></td>
-                <td><a href="list.php" style="color:#b30000;">Horror</a></td>
-                <td><a href="list.php" style="color:#b30000;">Romance</a></td>
+                <td><a href="list.php" style="color:#b30000;">Movies</a></td>
 	    	</tr>
 		</table>
 	</div>

@@ -33,11 +33,15 @@
 			<table>
 				<tr>
 					<?php
-						if (add)
-						for ($i = 0; $i < $count; $i++)
+						if (addbasket())
 						{
-							echo '<td><?php echo "$title" ?></td>';
-							echo '<td style="float:right">1</td>';
+							$array = unserialize($_SESSION['basket']);
+							$count = count($array);
+							for ($i = 0; $i < $count; $i++)
+							{
+								echo '<td><?php echo "$title" ?></td>';
+								echo '<td style="float:right">1</td>';
+							}
 						}
 					?>
 				</tr>
