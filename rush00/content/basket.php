@@ -12,6 +12,8 @@
         $title = $row['title'];
 		$img = $row['image'];
 	}
+
+	$array = unserialize($_SESSION['basket'])[0];
 ?>
 
 <html lang="en">
@@ -29,16 +31,11 @@
 			<table>
 				<tr>
 					<?php
-						if ($_SESSION('basket'))
-						{
-							$array = unserialize($_SESSION['basket']);
-							$count = count($array);
-							for ($i = 0; $i < $count; $i++)
-							{
-								echo '<td><?php echo "$title" ?></td>';
-								echo '<td style="float:right">1</td>';
-							}
-						}
+					for ($i = 0; $i < $count; $i++)
+					{
+							echo '<td><?php echo "$title" ?></td>';
+							echo '<td style="float:right">1</td>';
+					}
 					?>
 				</tr>
 				<tr>
