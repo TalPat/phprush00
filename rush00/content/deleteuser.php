@@ -6,7 +6,7 @@
 		header("location: remove.php");
 	$conn = ft_connect_database();
 	$sql = 
-		"DELETE FROM Users WHERE id='".$_GET[id]."';";
+		"DELETE FROM Users WHERE id='".$_SESSION[userid]."';";
 	if (mysqli_query($conn, $sql))
 	{
 		header("location: logout.php");

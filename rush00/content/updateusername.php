@@ -8,7 +8,7 @@
 		$sql =
 			"UPDATE Users
 			SET username = '".$_POST[username]."'
-			WHERE id = '".$_POST[id]."'";
+			WHERE id = '".$_SESSION[userid]."'";
 
 		if (mysqli_query($conn, $sql))
 		{
