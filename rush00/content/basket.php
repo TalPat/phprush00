@@ -12,10 +12,6 @@
         $title = $row['title'];
 		$img = $row['image'];
 	}
-	
-	$array = unserialize($_SESSION['basket']);
-	$count = count($array);
-
 ?>
 
 <html lang="en">
@@ -33,7 +29,7 @@
 			<table>
 				<tr>
 					<?php
-						if (addbasket())
+						if ($_SESSION('basket'))
 						{
 							$array = unserialize($_SESSION['basket']);
 							$count = count($array);

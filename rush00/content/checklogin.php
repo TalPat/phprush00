@@ -25,10 +25,16 @@
 ?>
 
 <html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<link rel="stylesheet" href="../Style/style.css">
+</head>
 <?php ft_printhead('Title'); ?>
-<body>
+<body class="body">
 	<?php ft_printheader(); ?>
 	<div class="maincontent">
+		<div class="container">
 		<p><?php echo "$output"; ?></p>
 	</div>
 	<?php ft_printfooter(); ?>
