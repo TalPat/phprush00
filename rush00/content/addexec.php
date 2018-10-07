@@ -9,7 +9,7 @@
 		$sql = 
 			"INSERT INTO Product (name, price, )
 			VALUES ();";
-		if (mysqli_query($conn, $sql)
+		if (mysqli_query($conn, $sql))
 		{
 			$output = "New record created successfully";
 		}
