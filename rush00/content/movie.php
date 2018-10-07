@@ -47,9 +47,9 @@
                 <p><?php echo"$desc" ?></p>
             </div>
 			<table>
-            <form action="../Extra/addbasket.php>">
+            <form action="../Extra/addbasket.php" method="POST">
             <tr>
-					    <td class="button"><input type="submit" name="OK" value="Add to Basket"></td>
+					    <td class="button"><input type="hidden" name="id" value="<?php echo"$_GET[id]" ?>" /><input type="submit" name="OK" value="Add to Basket"></td>
 				</tr>
 			</form>
 			</table>
