@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 	session_start();
@@ -12,27 +11,29 @@
 	{
 		array_push($arr, str_getcsv($str, ","));
 	}
-	print_r($arr);
 
-	/*
 	$conn = ft_connect_database();
-	if ($_POST[OK])
+
+	foreach ($arr as $val)
 	{
+		$price = 19;
+		if ($val[22] > 5)
+			$price = 29;
+		$val[3] = trim($val[3], "[]");
+		preg_match_all("/(?<='name': ')(.*?)(?='})/", $val[3], $genarr);
+		$genser = serialize($genarr[0]);
 		$sql = 
 			"INSERT INTO Product (title, price, rating, actors, director, genres, image, description, access_key)
-			VALUES ('".$_POST[title]."', '".$_POST[price]."', '".$_POST[rating]."', '".$_POST[actors]."', '".$_POST[director]."', '".$_POST[genres]."', '".$_POST[image]."', '".$_POST[description]."', '".rand(0,999999999)."');";
+			VALUES ('".$val[20]."', '".$price."', '".$val[22]."', '', '', '".$genser."', 'https://image.tmdb.org/t/p/original".$val[11]."', '".$val[9]."', '".rand(0,999999999)."');";
 		if (mysqli_query($conn, $sql))
 		{
-			$output = "New record created successfully";
+			echo"Records created successfully\n";
 		}
 		else
 		{
-			$output = "Unable to add to table".mysqli_error($conn)."\n";
+			echo"Unable to add to table".mysqli_error($conn)."\n";
 		}
 	}
-	else
-		header("location: add.php");
-	*/
 
 ?>
 
