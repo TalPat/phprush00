@@ -24,15 +24,11 @@
 				</tr>
 				<tr>
 					<td>Price:</td>
-					<td><input type="password" name="price"  ></td>
-				</tr>
-				<tr>
-					<td>Release date:</td>
-					<td><input type="text" name="release" ></td>
+					<td><input type="text" name="price"  ></td>
 				</tr>
 				<tr>
 					<td>Rating:</td>
-					<td><input type="password" name="rating"  ></td>
+					<td><input type="text" name="rating"  ></td>
 				</tr>
 				<tr>
 					<td>Actors:</td>
@@ -40,7 +36,7 @@
 				</tr>
 				<tr>
 					<td>Director:</td>
-					<td><input type="password" name="director"  ></td>
+					<td><input type="text" name="director"  ></td>
 				</tr>
 				<tr>
 					<td>Genres:</td>
@@ -48,11 +44,11 @@
 				</tr>
 				<tr>
 					<td>Image:</td>
-					<td><input type="password" name="image"  ></td>
+					<td><input type="text" name="image"  ></td>
 				</tr>
 				<tr>
 					<td>Description:</td>
-					<td><input type="password" name="description"  ></td>
+					<td><input type="text" name="description"  ></td>
 				</tr>
 				<tr>
 					<td><input type="submit" name="OK" value="Submit"></td>

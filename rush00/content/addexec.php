@@ -7,15 +7,15 @@
 	if ($_POST[OK])
 	{
 		$sql = 
-			"INSERT INTO Product (name, price, )
-			VALUES ();";
+			"INSERT INTO Product (title, price, rating, actors, director, genres, image, description, access_key)
+			VALUES ('".$_POST[title]."', '".$_POST[price]."', '".$_POST[rating]."', '".$_POST[actors]."', '".$_POST[director]."', '".$_POST[genres]."', '".$_POST[image]."', '".$_POST[description]."', '".rand(0,999999999)."');";
 		if (mysqli_query($conn, $sql))
 		{
 			$output = "New record created successfully";
 		}
 		else
 		{
-			$output = "Unable to add to table";
+			$output = "Unable to add to table".mysqli_error($conn)."\n";
 		}
 	}
 	else

@@ -1,11 +1,5 @@
 <?php
 
-	$servername = "localhost";
-	$username = "";
-	$password = "sixteen";
-	$dbname = "rush00";
-	$conn;
-
 	function ft_printheader()
 	{
 		if (isset($_SESSION['username']) && !empty($_SESSION['username']))
@@ -63,29 +57,39 @@
 
 	function ft_connect_database()
 	{
-		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		$servername = "localhost";
+		$dbusername = "root";
+		$dbpassword = "sixteen";
+		$dbname = "rush00";
+
+		$conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 		if (!$conn)
 			die("Connection failed: " . mysqli_connect_error());
-		echo "Connected successfully";
+		echo "Connected successfully"."\n";
 		return ($conn);
 	}
 
 	function ft_create_database()
 	{
-		$conn = mysqli_connect($servername, $username, $password);
+		$servername = "localhost";
+		$dbusername = "root";
+		$dbpassword = "sixteen";
+		$dbname = "rush00";
+
+		$conn = mysqli_connect($servername, $dbusername, $dbpassword);
 		if (!$conn)
 			die("Connection failed: " . mysqli_connect_error());
-		$sql = "CREATE DATABASE ".$dbname;
+		$sql = "CREATE DATABASE IF NOT EXISTS ".$dbname;
 		if (mysqli_query($conn, $sql))
-			echo "Database created successfully";
+			echo "Database created successfully"."\n";
 		else
-			echo "Error creating database: " . mysqli_error($conn);
+			echo "Error creating database: " . mysqli_error($conn)."\n";
 		mysqli_close($conn);
 	}
 
 	function ft_admincheck()
 	{
 		if (!$_SESSION[admin])
-			header('location: adminlogin.php');
+			header('location: ../content/adminlogin.php');
 	}
 ?>
