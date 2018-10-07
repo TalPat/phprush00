@@ -33,7 +33,8 @@
 			<table>
 				<tr>
 					<?php
-						foreach ($count as $key => $value)
+						if (add)
+						for ($i = 0; $i < $count; $i++)
 						{
 							echo '<td><?php echo "$title" ?></td>';
 							echo '<td style="float:right">1</td>';
