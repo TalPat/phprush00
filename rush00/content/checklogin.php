@@ -3,14 +3,14 @@
 	session_start();
 	include_once '../Extra/functions.php';
 	$conn = ft_connect_database();
-	$sql = "SELECT userid, username, email, passwd FROM Users";
+	$sql = "SELECT userid, username, email, passwd FROM Users WHERE email = '".$_POST[login]."'";
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result))
 		{
 			if (hash("whirlpool", $_POST[passwd]) == $row[passwd])
 			{
-				$_SESSION[user] = $row[username];
+				$_SESSION[username] = $row[username];
 				$_SESSION[userid] = $row[userid];
 				header("Location: user.php"); 
 			}
