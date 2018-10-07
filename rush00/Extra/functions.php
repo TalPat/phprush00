@@ -17,6 +17,7 @@ function ft_printheader()
 					<a href="Categories.php" style="color:#b30000;">CATEGORIES</a>
 				</div>
 				<div class="login">
+					<a href="basket.php" ><img src="../Img/basket.png" alt=""></a>	
 					'.$logstat.'
 				</div>
 			</div>'

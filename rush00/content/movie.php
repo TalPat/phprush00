@@ -50,7 +50,7 @@
             <form action="../Extra/addbasket.php>">
             <tr>
 					    <td class="button"><input type="submit" name="OK" value="Add to Basket"></td>
-				</tr>
+			</tr>
 			</form>
 			</table>
 		</div>

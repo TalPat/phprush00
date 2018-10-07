@@ -11,7 +11,10 @@
     {
         $title = $row['title'];
 		$img = $row['image'];
-    }
+	}
+	
+	$array = unserialize($_SESSION['basket']);
+	$count = count($array);
 
 ?>
 
@@ -29,7 +32,13 @@
 			<h2>Basket</h2>
 			<table>
 				<tr>
-					
+					<?php
+						foreach ($count as $key => $value)
+						{
+							echo '<td><?php echo "$title" ?></td>';
+							echo '<td style="float:right">1</td>';
+						}
+					?>
 				</tr>
 				<tr>
 					<td class="button"><input type="submit" name="OK" value="Confirm Order"></td>
