@@ -26,6 +26,7 @@
 		$sql = 
 			"INSERT INTO Product (title, price, rating, actors, director, genres, image, description, access_key)
 			VALUES ('".$val[20]."', '".$price."', '".$val[22]."', '', '', '".$genser."', 'https://image.tmdb.org/t/p/original".$val[11]."', '".$val[9]."', '".rand(0,999999999)."');";
+		mysqli_query($conn, $sql);
 	}
 
 ?>

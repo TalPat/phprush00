@@ -8,7 +8,7 @@
 	$result = mysqli_query($conn, $sql);
 	while($row = mysqli_fetch_assoc($result))
 	{
-		$str = $str."<tr><td>".$row[id]."</td><td>".$row[title]."</td><td><a href='removeexec.php?id=".$row[id]."'>delete</a></td></tr>";
+		$str = $str."<tr><td>".$row[id]."</td><td>".$row[title]."</td><td><a href='modifyexec.php?id=".$row[id]."'>modify</a></td></tr>";
 	}
 ?>
 
@@ -17,13 +17,13 @@
 <body>
 	<?php ft_printheader(); ?>
 	<div class="maincontent">
-		<h2>Remove Product</h2>
+		<h2>Modify Product</h2>
 		<form action="addexec.php" method="POST">
 			<table>
 				<tr>
 					<td>Id</td>
 					<td>Name</td>
-					<td>Delete</td>
+					<td>Modify</td>
 				</tr>
 				<?php echo "$str"; ?>
 			</table>
