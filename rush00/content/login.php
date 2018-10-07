@@ -9,7 +9,7 @@
 <?php ft_printhead('Title'); ?>
 <body>
 	<?php ft_printheader(); ?>
-	<div class="maincontent">
+	<div class="container">
 		<h2>Login</h2>
 		<form action="checklogin.php" method="POST">
 			<table>

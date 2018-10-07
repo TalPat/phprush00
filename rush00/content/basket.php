@@ -2,7 +2,17 @@
 
 	session_start();
 	include_once '../Extra/functions.php';
-	include_once '../Products/products.php'
+	include_once '../Products/products.php';
+
+	$con = ft_connect_database();
+    $sql = "SELECT * FROM PRODUCT WHERE id = '".$_GET['id']."';";
+    $result = mysqli_query($con, $sql);
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        $title = $row['title'];
+		$img = $row['image'];
+    }
+
 ?>
 
 <html lang="en">
@@ -18,30 +28,8 @@
 		<div class="container">
 			<h2>Basket</h2>
 			<table>
-			<?PHP 
-				if (addto_basket())
-				{
-					$articles = count($_SESSION['array']);
-					if ($atricles <= 0)
-						echo "<tr><td>Currently no items in basket</td></tr>";
-					else
-					{
-						for ($i = 0; $i < $articles; i++)
-						{
-							echo "<tr>";
-							echo "<td>"$_SESSION['product_name']"</td>";
-							echo "<td>"$_SESSION['quantity']"</td>"
-							echo "<td>"$_SESSION['price']"</td>";
-							echo "</tr>";
-						}
-					}
-				}
-			?>
 				<tr>
-					<td>$product_name:</td>
-				</tr>
-				<tr>
-					<td>$product_name:</td>
+					
 				</tr>
 				<tr>
 					<td class="button"><input type="submit" name="OK" value="Confirm Order"></td>

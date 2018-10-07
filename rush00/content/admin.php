@@ -7,12 +7,15 @@
 ?>
 
 <html lang="en">
-
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<link rel="stylesheet" href="../Style/style.css">
+</head>
 <?php ft_printhead('Title'); ?>
-
-<body>
-	<?php ft_printheader(); ?>
-	<div class="maincontent">
+<body class="body">
+<?php ft_printheader(); ?>
+	<div class="container">
 		<h2>Admin Page</h2>
 		<a href="../Database/install.php">Initialize database</a><br>
 		<a href="add.php">Add product</a><br>

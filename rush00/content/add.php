@@ -7,14 +7,14 @@
 ?>
 
 <html lang="en">
-
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<link rel="stylesheet" href="../Style/style.css">
+</head>
 <?php ft_printhead('Title'); ?>
-
-<html lang="en">
-<?php ft_printhead('Title'); ?>
-<body>
-	<?php ft_printheader(); ?>
-	<div class="maincontent">
+<body class="body">
+	<div class="container">
 		<h2>Add Product</h2>
 		<form action="addexec.php" method="POST">
 			<table>

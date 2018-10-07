@@ -3,7 +3,7 @@
 function ft_printheader()
 	{
 		if (isset($_SESSION['username']) && !empty($_SESSION['username']))
-			$logstat = '<p>Logged in as '.$_SESSION[username].'</p>';
+			$logstat = '<p>Logged in as '.$_SESSION[username].'</p> <a href="logout.php">Logout</a>';
 		else
 			$logstat = '<a href="login.php" style="color:#b30000;">Login</a>';
 		print(
@@ -17,7 +17,6 @@ function ft_printheader()
 					<a href="Categories.php" style="color:#b30000;">CATEGORIES</a>
 				</div>
 				<div class="login">
-					<a href="basket.php" ><img src="../Img/basket.png" alt=""></a>
 					'.$logstat.'
 				</div>
 			</div>'
