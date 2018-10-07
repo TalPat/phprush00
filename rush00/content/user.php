@@ -13,12 +13,12 @@
 	<?php ft_printheader(); ?>
 	<div class="maincontent">
 		<form action="updateusername.php" method="POST">
-			New Username: <input type="text"><br>
-			<input type="submit" name="OK">
+			New Username: <input type="text" name="username"><br>
+			<input type="submit" name="OK" value="change">
 		</form>
 		<form action="deleteuser.php" method="POST">
-			<input type="hidden" name="id" value="<?php echo"$_SESSION[id]" ?>" />
-			<input type="submit" name="OK">
+			<input type="hidden" name="id" value="<?php echo"$_SESSION[userid]" ?>" />
+			<input type="submit" name="OK" value="delete">
 		</form>
 		<h2>Your Films</h2>
 		<?php ft_printtrending(); ?>
