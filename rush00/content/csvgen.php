@@ -22,7 +22,7 @@
 		$val[3] = preg_replace('/"/', '\'', $val[3]);
 		preg_match_all("/(?<='name': ')(.*?)(?='})/", $val[3], $genarr);
 		$genser = serialize($genarr);
-		$val[9] = preg_replace('/[^A-Za-z0-9\-]/', '', $val[9]);
+		$val[9] = preg_replace('/[^A-Za-z0-9 \-]/', '', $val[9]);
 		$sql = 
 			"INSERT INTO Product (title, price, rating, actors, director, genres, image, description, access_key)
 			VALUES ('".$val[20]."', '".$price."', '".$val[22]."', '', '', '".$genser."', 'https://image.tmdb.org/t/p/original".$val[11]."', '".$val[9]."', '".rand(0,999999999)."');";
