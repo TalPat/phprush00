@@ -47,10 +47,11 @@
                 <p><?php echo"$desc" ?></p>
             </div>
 			<table>
-            <form action:"../Extra/addbasket.php>">
+            <form action="../Extra/addbasket.php>">
             <tr>
 					    <td class="button"><input type="submit" name="OK" value="Add to Basket"></td>
 				</tr>
+			</form>
 			</table>
 		</div>
 	</div>
