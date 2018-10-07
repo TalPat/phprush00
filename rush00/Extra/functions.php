@@ -9,7 +9,9 @@
 	function ft_printheader()
 	{
 		if (isset($_SESSION['username']) && !empty($_SESSION['username']))
-			$logstat = '<p>Logged in as '.$_SESSION[username].'</p>';
+			$logstat =
+				'<p>Logged in as '.$_SESSION[username].'</p>
+				<a href="logout.php">Logout</a>';
 		else
 			$logstat = '<a href="login.php">Login</a>';
 		print(
@@ -81,4 +83,9 @@
 		mysqli_close($conn);
 	}
 
+	function ft_admincheck()
+	{
+		if (!$_SESSION[admin])
+			header('location: adminlogin.php');
+	}
 ?>
