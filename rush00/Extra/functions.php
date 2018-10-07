@@ -5,7 +5,8 @@ function ft_printheader()
 		if (isset($_SESSION['username']) && !empty($_SESSION['username']))
 			$logstat = '<p>Logged in as '.$_SESSION[username].'</p> <a href="logout.php">Logout</a>';
 		else
-			$logstat = '<a href="login.php" style="color:#b30000;">Login</a>';
+			$logstat = '<a href="login.php" style="color:#b30000;">Login</a></p> <a href="logout.php">Logout</a>';;
+			'</p> <a href="logout.php">Logout</a>';
 		print(
 			'<div class="header">
 				<div>
@@ -15,9 +16,9 @@ function ft_printheader()
 					<a href="index.php" style="color:#b30000;">HOME</a>
 					<a href="browse.php" style="color:#b30000;">BROWSE MOVIES</a>
 					<a href="Categories.php" style="color:#b30000;">CATEGORIES</a>
+					<a href="basket.php" ><img src="../Img/basket.png" alt=""></a>
 				</div>
 				<div class="login">
-					<a href="basket.php" ><img src="../Img/basket.png" alt=""></a>	
 					'.$logstat.'
 				</div>
 			</div>'

@@ -6,10 +6,16 @@
 ?>
 
 <html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<link rel="stylesheet" href="../Style/style.css">
+</head>
 <?php ft_printhead('Title'); ?>
-<body>
+<body class="body">
 	<?php ft_printheader(); ?>
-	<div class="container">
+	<div class="maincontent">
+		<div class="container">
 		<h2>Login</h2>
 		<form action="checklogin.php" method="POST">
 			<table>

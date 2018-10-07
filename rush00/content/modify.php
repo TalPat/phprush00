@@ -13,10 +13,16 @@
 ?>
 
 <html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<link rel="stylesheet" href="../Style/style.css">
+</head>
 <?php ft_printhead('Title'); ?>
-<body>
+<body class="body">
 	<?php ft_printheader(); ?>
 	<div class="maincontent">
+		<div class="container">
 		<h2>Modify Product</h2>
 		<form action="addexec.php" method="POST">
 			<table>
